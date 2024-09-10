@@ -18,59 +18,47 @@ Developed by: LOGA MITHRA R
 RegisterNumber:  212223100027
 ```
 ```
-
 import pandas as pd
-df=pd.read_csv("Placement_Data(1).csv")
-df.head()
-
-df1=df.copy()
-df1=df1.drop(["sl_no","salary"],axis=1)
-df1.head()
-
-df1.isnull().sum()
-
-df1.duplicated().sum()
-
+data=pd.read_csv("Placement_Data.csv")
+data.head()
+data1=data.copy()
+data1=data1.drop(["sl_no","salary"],axis=1)
+data1.head()
+data1.isnull().sum()
+data1.duplicated().sum()
 from sklearn.preprocessing import LabelEncoder
 le=LabelEncoder()
-df1["gender"]=le.fit_transform(df1["gender"])
-df1["ssc_b"]=le.fit_transform(df1["ssc_b"])
-df1["hsc_b"]=le.fit_transform(df1["hsc_b"])
-df1["hsc_s"]=le.fit_transform(df1["hsc_s"])
-df1["degree_t"]=le.fit_transform(df1["degree_t"])
-df1["workex"]=le.fit_transform(df1["workex"])
-df1["specialisation"]=le.fit_transform(df1["specialisation"])
-df1["status"]=le.fit_transform(df1["status"])
-df1
-
-x=df1.iloc[:,:-1]
-x
-
-y=df1["status"]
-y
-
+data1["gender"]=le.fit_transform(data1["gender"])
+data1["ssc_b"]=le.fit_transform(data1["ssc_b"])
+data1["hsc_b"]=le.fit_transform(data1["hsc_b"])
+data1["hsc_s"]=le.fit_transform(data1["hsc_s"])
+data1["degree_t"]=le.fit_transform(data1["degree_t"])
+data1["workex"]=le.fit_transform(data1["workex"])
+data1["specialisation"]=le.fit_transform(data1["specialisation"])
+data1["status"]=le.fit_transform(data1["status"])
+data1.head()
+x=data1.iloc[:,:-1]
+print(x) #allocate the -1 column for x
+y=data1["status"]
+print(y)
 from sklearn.model_selection import train_test_split
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=0)
-
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=0)
 from sklearn.linear_model import LogisticRegression
-lr=LogisticRegression(solver="liblinear")
+lr = LogisticRegression(solver="liblinear")
+#classification
 lr.fit(x_train,y_train)
 y_pred=lr.predict(x_test)
-y_pred
-
+print(y_pred)
 from sklearn.metrics import accuracy_score
 accuracy=accuracy_score(y_test,y_pred)
-accuracy
-
+print(accuracy)
 from sklearn.metrics import confusion_matrix
 confusion = confusion_matrix(y_test,y_pred)
-confusion
-
+print(confusion)
 from sklearn.metrics import classification_report
-classification_report1 = classification_report(y_test,y_pred)
-classification_report1
-
-lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]])
+classification_report1=classification_report(y_test,y_pred)
+print(classification_report1)
+print(lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]]))
 ```
 ## Output:
 ## Placement Data:
