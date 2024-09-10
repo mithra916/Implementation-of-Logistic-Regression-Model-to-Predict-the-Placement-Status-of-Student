@@ -74,7 +74,31 @@ lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]])
 ```
 ## Output:
 ## Placement Data:
+![image](https://github.com/user-attachments/assets/e7ca4571-6c5c-4a5e-b653-ff240095ec6d)
 
+## Checking the null() function:
+![image](https://github.com/user-attachments/assets/ce9c16d1-2def-4dfc-9c06-02e07957b7ec)
+
+## Data Duplicate:
+![image](https://github.com/user-attachments/assets/5aa90d84-4cea-491f-88e8-89d82a514722)
+
+## Print Data:
+![image](https://github.com/user-attachments/assets/50de15f3-63a1-4fff-943f-5b92c4d375b3)
+
+## Y_prediction array:
+![image](https://github.com/user-attachments/assets/4adc16cb-441a-447b-a549-807549a54c5f)
+
+## Accuracy value:
+![image](https://github.com/user-attachments/assets/12632ddc-6127-4db4-8257-7da3758bcd9d)
+
+## Confusion array:
+![image](https://github.com/user-attachments/assets/4e4bbde1-d456-4775-97a4-8fc36e38ae12)
+
+## Classification Report:
+![image](https://github.com/user-attachments/assets/a0d2886f-8c4e-420c-81fc-0941d0a12d0e)
+
+## Prediction of LR:
+![image](https://github.com/user-attachments/assets/61598743-b03d-478f-8b4f-735501bb5c5e)
 
 
 ## Result:
